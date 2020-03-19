@@ -9,7 +9,7 @@
     "components": [
         {
             "label": "Select",
-            "widget": "choicesjs",
+            "widget": "html5",
             "tableView": true,
             "multiple": true,
             "data": {
@@ -53,7 +53,7 @@
             "tableView": false
         }
     ]
-}'></formio>
+}' (submit)="onSubmit($event)"></formio>
 </div>
 
 <router-outlet></router-outlet>

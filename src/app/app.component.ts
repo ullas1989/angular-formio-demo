@@ -12,9 +12,7 @@ export class AppComponent {
     components: []
   };
 
-  onChange(event) {
-    this.jsonElement.nativeElement.innerHTML = '';
-    this.jsonElement.nativeElement.appendChild(document.createTextNode(JSON.stringify(event.form, null, 4)));
-    // this.formRenderer = event.form;
+  onSubmit(event) {
+    console.log('data', event);
   }
 }
