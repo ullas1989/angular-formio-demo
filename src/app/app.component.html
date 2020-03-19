@@ -1,15 +1,12 @@
-<div>Multi-select dropdown example - 2</div>
-<!-- <form-builder [form]="form" (change)="onChange($event)"></form-builder> -->
-<!-- <div class="well jsonviewer">
-  <pre id="json"><code class="language-json" #json></code></pre>
-</div> -->
-
 <div>
+    <div>
+        <h4>With choicesjs - Data ({{choiceJsData}})</h4>
+    </div>
   <formio [form]='{
     "components": [
         {
             "label": "Select",
-            "widget": "html5",
+            "widget": "choicesjs",
             "tableView": true,
             "multiple": true,
             "data": {
@@ -53,7 +50,62 @@
             "tableView": false
         }
     ]
-}' (submit)="onSubmit($event)"></formio>
+}' (change)="onChangeChoiceJs($event)"></formio>
 </div>
+
+<div>
+    <div>
+        <h4>With html5 - Data ({{html5Data}})</h4>
+    </div>
+    <formio [form]='{
+      "components": [
+          {
+              "label": "Select",
+              "widget": "html5",
+              "tableView": true,
+              "multiple": true,
+              "data": {
+                  "values": [
+                      {
+                          "label": "opt1",
+                          "value": "opt1"
+                      },
+                      {
+                          "label": "opt2",
+                          "value": "opt2"
+                      },
+                      {
+                          "label": "opt3",
+                          "value": "opt3"
+                      },
+                      {
+                          "label": "opt4",
+                          "value": "opt4"
+                      }
+                  ]
+              },
+              "selectThreshold": 0.3,
+              "calculateServer": false,
+              "validate": {
+                  "multiple": true
+              },
+              "key": "select1",
+              "type": "select",
+              "indexeddb": {
+                  "filter": {}
+              },
+              "input": true
+          },
+          {
+              "type": "button",
+              "label": "Submit",
+              "key": "submit",
+              "disableOnInvalid": true,
+              "input": true,
+              "tableView": false
+          }
+      ]
+  }' (change)="onChangeHtml5($event)"></formio>
+  </div>
 
 <router-outlet></router-outlet>

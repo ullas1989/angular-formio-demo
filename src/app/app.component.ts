@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +6,18 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  @ViewChild('json') jsonElement?: ElementRef;
-  public formRenderer: any;
-  public form: any = {
-    components: []
-  };
+  choiceJsData: any;
+  html5Data: any;
 
-  onSubmit(event) {
-    console.log('data', event);
+  onChangeChoiceJs(event) {
+    if (event.data) {
+      this.choiceJsData = JSON.stringify(event.data);
+    }
+  }
+
+  onChangeHtml5(event) {
+    if (event.data) {
+      this.html5Data = JSON.stringify(event.data);
+    }
   }
 }
