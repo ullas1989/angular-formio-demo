@@ -5,10 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FormioModule } from 'angular-formio';
+import { BuilderComponent } from './builder/builder/builder.component';
+import { RenderComponent } from './renderer/render/render.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BuilderComponent,
+    RenderComponent
   ],
   imports: [
     BrowserModule,
