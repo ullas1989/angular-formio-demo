@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FormioModule } from 'angular-formio';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { BuilderComponent } from './builder/builder/builder.component';
 import { RenderComponent } from './renderer/render/render.component';
 
@@ -17,7 +19,8 @@ import { RenderComponent } from './renderer/render/render.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormioModule
+    FormioModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,33 @@
-<form-builder [form]="form" (change)="onChange($event)"></form-builder>
+<div class="position-relative m-md-3 bg-light px-3" style="padding-top:1em !important">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-inline my-4">
+                <div class="form-group mx-sm-3 mb-2">
+                    <label class="mr-2">Builder</label>
+                    <select class="form-control" (change)="onDisplaySelect($event)">
+                        <option *ngFor="let build of builderTypes" [value]="build.type">{{build.display}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-inline my-4">
+            <div class="form-group mr-3">
+                <button class="btn btn-secondary mb-2" (click)="saveSchema()">Save Schema</button>
+            </div>
+            <div class="form-group mr-3">
+                <button class="btn btn-secondary mb-2" (click)="refreshSchema()">Refresh Schema</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form-builder #builder [form]="form" (change)="onChange($event)"></form-builder>
+        </div>
+    </div>
+</div>
+
 <div class="well jsonviewer">
     <pre id="json"><code class="language-json" #json></code></pre>
 </div>
