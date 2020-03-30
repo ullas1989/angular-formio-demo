@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilderComponent } from 'angular-formio';
+import { HttpClient } from '@angular/common/http';
 
 import * as data from '../../file.json';
 
@@ -15,14 +16,15 @@ export class BuilderComponent implements OnInit {
   @ViewChild('json') jsonElement?: ElementRef;
   @ViewChild(FormBuilderComponent, { static: false }) builder: FormBuilderComponent;
 
-  public form: any = {
-    components: []
-  };
+  public form: any;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.form = (data as any).default;
+    /* this.http.get('http://localhost:5063/formio/getschema/12060380').subscribe((val: any) => {
+      this.form = val.schema;
+    }); */
+    this.form = (data as any).default.schema;
   }
 
   onDisplaySelect(event) {
@@ -31,16 +33,28 @@ export class BuilderComponent implements OnInit {
   }
 
   onChange(event) {
-    this.formSchema = JSON.stringify(event.form, null, 4);
+    this.formSchema = {
+      schema: event.form
+    };
     this.jsonElement.nativeElement.innerHTML = '';
     this.jsonElement.nativeElement.appendChild(document.createTextNode(JSON.stringify(event.form, null, 4)));
   }
 
   saveSchema() {
+    /* let requestData = '';
 
+    if (this.formSchema) {
+      requestData = JSON.stringify(this.formSchema);
+    } else {
+      requestData = JSON.stringify({ schema: this.form });
+    }
+    this.http.post('http://localhost:5063/formio/addschema/4BA4AC73-FCB0-478E-BF54-D139935081B2', requestData).subscribe();
+ */
   }
 
   refreshSchema() {
-
+    /* this.http.get('http://localhost:5063/formio/getschema/12060380').subscribe((val: any) => {
+      this.form = val.schema;
+    }); */
   }
 }

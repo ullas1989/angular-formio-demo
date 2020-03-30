@@ -1,185 +1,155 @@
 {
-    "display": "wizard",
-    "components": [
-        {
-            "title": "Page 1",
-            "label": "Page 1",
-            "type": "panel",
-            "key": "page1",
-            "components": [
-                {
-                    "label": "data",
-                    "calculateValue": "console.log('data', data);",
-                    "calculateServer": false,
-                    "key": "data",
-                    "type": "hidden",
-                    "input": true,
-                    "tableView": false
+    "schema": {
+        "display": "wizard",
+        "components": [
+            {
+                "title": "Page 1",
+                "label": "Principals & Payroll",
+                "type": "panel",
+                "key": "page1",
+                "input": false,
+                "tableView": false,
+                "breadcrumbClickable": true,
+                "buttonSettings": {
+                    "previous": true,
+                    "cancel": true,
+                    "next": true
                 },
-                {
-                    "label": "States",
-                    "widget": "choicesjs",
-                    "tableView": true,
-                    "multiple": true,
-                    "data": {
-                        "values": [
+                "collapsible": false,
+                "components": [
+                    {
+                        "label": "Data Grid",
+                        "disableAddingRemovingRows": true,
+                        "reorder": false,
+                        "defaultOpen": false,
+                        "layoutFixed": false,
+                        "enableRowGroups": false,
+                        "tableView": false,
+                        "defaultValue": [
                             {
-                                "label": "Ohio",
-                                "value": "OH"
-                            },
+                                "dataGrid1": [
+                                    {
+                                        "textField": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "calculateServer": false,
+                        "key": "dataGrid",
+                        "type": "datagrid",
+                        "input": true,
+                        "components": [
                             {
-                                "label": "New York",
-                                "value": "NY"
-                            },
-                            {
-                                "label": "Alaska",
-                                "value": "AK"
-                            },
-                            {
-                                "label": "Colorado",
-                                "value": "CO"
+                                "breadcrumbClickable": true,
+                                "buttonSettings": {
+                                    "previous": true,
+                                    "cancel": true,
+                                    "next": true
+                                },
+                                "collapsible": false,
+                                "tableView": false,
+                                "key": "panel",
+                                "type": "panel",
+                                "label": "Panel",
+                                "input": false,
+                                "components": [
+                                    {
+                                        "label": "Data Grid",
+                                        "disableAddingRemovingRows": false,
+                                        "reorder": false,
+                                        "addAnotherPosition": "bottom",
+                                        "defaultOpen": false,
+                                        "layoutFixed": false,
+                                        "enableRowGroups": false,
+                                        "tableView": false,
+                                        "defaultValue": [
+                                            {}
+                                        ],
+                                        "calculateServer": false,
+                                        "key": "dataGrid1",
+                                        "type": "datagrid",
+                                        "input": true,
+                                        "components": [
+                                            {
+                                                "label": "Text Field",
+                                                "spellcheck": true,
+                                                "tableView": true,
+                                                "calculateServer": false,
+                                                "validate": {
+                                                    "required": true
+                                                },
+                                                "key": "textField",
+                                                "type": "textfield",
+                                                "input": true
+                                            },
+                                            {
+                                                "label": "Text Field",
+                                                "spellcheck": true,
+                                                "tableView": true,
+                                                "calculateServer": false,
+                                                "validate": {
+                                                    "required": true
+                                                },
+                                                "key": "textField1",
+                                                "type": "textfield",
+                                                "input": true
+                                            },
+                                            {
+                                                "label": "Text Field",
+                                                "spellcheck": true,
+                                                "tableView": true,
+                                                "calculateServer": false,
+                                                "validate": {
+                                                    "required": true
+                                                },
+                                                "key": "textField2",
+                                                "type": "textfield",
+                                                "input": true
+                                            },
+                                            {
+                                                "label": "Text Field",
+                                                "spellcheck": true,
+                                                "tableView": true,
+                                                "calculateServer": false,
+                                                "validate": {
+                                                    "required": true
+                                                },
+                                                "key": "textField3",
+                                                "type": "textfield",
+                                                "input": true
+                                            },
+                                            {
+                                                "label": "Text Field",
+                                                "spellcheck": true,
+                                                "tableView": true,
+                                                "calculateServer": false,
+                                                "validate": {
+                                                    "required": true
+                                                },
+                                                "key": "textField4",
+                                                "type": "textfield",
+                                                "input": true
+                                            },
+                                            {
+                                                "label": "Text Field",
+                                                "spellcheck": true,
+                                                "tableView": true,
+                                                "calculateServer": false,
+                                                "validate": {
+                                                    "required": true
+                                                },
+                                                "key": "textField5",
+                                                "type": "textfield",
+                                                "input": true
+                                            }
+                                        ]
+                                    }
+                                ]
                             }
                         ]
-                    },
-                    "selectThreshold": 0.3,
-                    "calculateServer": false,
-                    "validate": {
-                        "multiple": true
-                    },
-                    "key": "states",
-                    "type": "select",
-                    "indexeddb": {
-                        "filter": {}
-                    },
-                    "input": true
-                }
-            ],
-            "input": false,
-            "tableView": false
-        },
-        {
-            "title": "Page 2",
-            "label": "Page 2",
-            "type": "panel",
-            "key": "page2",
-            "input": false,
-            "tableView": false,
-            "components": [
-                {
-                    "label": "State Grids",
-                    "disableAddingRemovingRows": true,
-                    "reorder": false,
-                    "addAnotherPosition": "bottom",
-                    "defaultOpen": false,
-                    "layoutFixed": false,
-                    "enableRowGroups": false,
-                    "tableView": false,
-                    "defaultValue": [
-                        {
-                            "state": "",
-                            "empGrid": [
-                                {
-                                    "name": "",
-                                    "salary": "",
-                                    "phone": "",
-                                    "stateCodeHidden": ""
-                                }
-                            ]
-                        }
-                    ],
-                    "calculateValue": "if(data.states && data.states.length > 0) {\r\n  let result = [];\r\n  \r\n  _.forEach(data.states, function(s) {\r\n\t\r\n\tlet text = s;\r\n\t\r\n  \tlet dataGrid = _.find(data.stateGrids, ['state', s]);\r\n\t\r\n\t\tif(!dataGrid) {\r\n\t\t\tresult.push({ \r\n\t\t\t\t\t\tstate: text, \r\n\t\t\t\t\t\tempGrid: [\r\n\t\t\t\t\t\t\t{\t\r\n\t\t\t\t\t\t\t\tname: '', \r\n\t\t\t\t\t\t\t\tsalary: '', \r\n\t\t\t\t\t\t\t\tstateCodeHidden: s\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t});\r\n\t  \t} else {\r\n\t  \t  let newGridObj = Object.assign({}, dataGrid, { state: text })\r\n\t  \t\tresult.push(newGridObj);\r\n\t  \t}\r\n  });\r\n  value = result;\r\n}",
-                    "calculateServer": false,
-                    "key": "stateGrids",
-                    "type": "datagrid",
-                    "input": true,
-                    "components": [
-                        {
-                            "label": "State",
-                            "autoExpand": false,
-                            "spellcheck": true,
-                            "disabled": true,
-                            "tableView": true,
-                            "calculateServer": false,
-                            "key": "state",
-                            "type": "textarea",
-                            "input": true
-                        },
-                        {
-                            "label": "EmpGrid",
-                            "disableAddingRemovingRows": false,
-                            "reorder": false,
-                            "addAnotherPosition": "bottom",
-                            "defaultOpen": false,
-                            "layoutFixed": false,
-                            "enableRowGroups": false,
-                            "tableView": false,
-                            "defaultValue": [
-                                {
-                                    "name": "",
-                                    "salary": ""
-                                }
-                            ],
-                            "calculateServer": false,
-                            "validate": {
-                                "required": true
-                            },
-                            "key": "empGrid",
-                            "type": "datagrid",
-                            "input": true,
-                            "components": [
-                                {
-                                    "label": "Name",
-                                    "spellcheck": true,
-                                    "tableView": true,
-                                    "calculateServer": false,
-                                    "validate": {
-                                        "required": true
-                                    },
-                                    "key": "name",
-                                    "type": "textfield",
-                                    "input": true
-                                },
-                                {
-                                    "label": "Salary",
-                                    "spellcheck": true,
-                                    "tableView": true,
-                                    "calculateServer": false,
-                                    "validate": {
-                                        "required": true
-                                    },
-                                    "key": "salary",
-                                    "type": "textfield",
-                                    "input": true
-                                },
-                                {
-                                    "label": "Phone",
-                                    "spellcheck": true,
-                                    "tableView": true,
-                                    "clearOnHide": false,
-                                    "calculateServer": false,
-                                    "validate": {
-                                        "required": true
-                                    },
-                                    "key": "phone",
-                                    "customConditional": "if(row.stateCodeHidden && row.stateCodeHidden.length > 0) {\r\n    show = _.includes(row.stateCodeHidden, 'OH');\t  \r\n}",
-                                    "type": "textfield",
-                                    "input": true
-                                },
-                                {
-                                    "label": "stateCodeHidden",
-                                    "customDefaultValue": "value = instance.parent._data.state;",
-                                    "calculateValue": "value = instance.parent._data.state;",
-                                    "calculateServer": false,
-                                    "key": "stateCodeHidden",
-                                    "type": "hidden",
-                                    "input": true,
-                                    "tableView": false
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
+                    }
+                ]
+            }
+        ]
+    }
 }

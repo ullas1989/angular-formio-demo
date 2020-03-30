@@ -24,7 +24,7 @@ export class RenderComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('schema', (data as any).default);
-    this.schema = (data as any).default;
+    this.schema = (data as any).default.schema;
   }
 
 }
